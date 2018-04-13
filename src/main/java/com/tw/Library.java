@@ -78,7 +78,7 @@ public class Library {
             total.add(atotal);
             StudentInfo.put(stuid, astudent);
 
-            System.out.print("学生成绩被添加");
+            System.out.print("学生成绩被添加\n");
         }
     }
 

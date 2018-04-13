@@ -53,7 +53,7 @@ public class LibraryTest {
         studentinfo.put(1, astudent);
         underTest.add(studenta);
         assertThat(underTest.StudentInfo).isEqualTo(studentinfo);
-        assertThat(systemOut()).isEqualTo("学生成绩被添加");
+        assertThat(systemOut()).isEqualTo("学生成绩被添加\n");
 
     }
 
@@ -72,20 +72,21 @@ public class LibraryTest {
     @Test
     public void reportTest() {
         Library underTest = new Library();
-        String studenta = "lulu，1，语文：90，数学：90，英语：90，编程：90";
-        String studentb = "haha，2，语文：80，数学：80，英语：80，编程：80";
+        String studenta = "lulu，2，语文：90，数学：90，英语：90，编程：90";
+        String studentb = "haha，3，语文：80，数学：80，英语：80，编程：80";
         underTest.add(studenta);
         underTest.add(studentb);
-        String studentnum = "1，2";
+        String studentnum = "2，3";
         underTest.report(studentnum);
-        assertThat(systemOut()).isEqualTo("学生成绩被添加学生成绩被添加成绩单\n" +
-
+        assertThat(systemOut()).isEqualTo("学生成绩被添加\n" +
+                "学生成绩被添加\n" +
+                "成绩单\n" +
                 "姓名|数学|语文|英语|编程|平均分|总分\n" +
                 "====================================\n" +
                 "lulu|90|90|90|90|90.0|360\n" +
                 "====================================\n" +
                 "haha|80|80|80|80|80.0|320\n" +
-                "全班总平均分：340.0\n" +
-                "全班总分中位数：340.0\n");
+                "全班总平均分：346.6666666666667\n" +
+                "全班总分中位数：360.0\n");
     }
 }
